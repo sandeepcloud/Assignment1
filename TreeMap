@@ -1,0 +1,45 @@
+import java.util.Comparator;
+import java.util.TreeMap;
+
+public class Col6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//to create a TreeMap of <studentId(Integer), studentName(String)>. 
+		//Add some student reocrds with random student ids.
+		
+		TreeMap<Integer, String> t = new TreeMap<Integer, String>();
+		t.put(67, "Sandy");
+		t.put(90, "Shankar");
+		t.put(12, "Gowda");
+		t.put(34, "Abhi");
+		
+		System.out.println(t);
+		
+		//to get all keys from the given a Tree Map.
+		System.out.println(t.keySet());
+	
+		//to get the first (lowest) key and the last (highest) key currently in a map.
+		System.out.println("First lowest key = "+t.firstKey()+" Last Heighest key = "+t.lastKey());
+		
+		//to get a reverse order view of the keys contained in a given map.
+		System.out.println("reverse Order key is = "+t.descendingKeySet());
+		
+		//to delete all elements from a given Tree Map.
+		t.clear();
+		System.out.println("After delete all the elements "+t);
+		
+	}
+
+}
+//to sort keys in Tree Map by using comparator.
+class Sorting implements Comparator<Integer>
+{
+
+	@Override
+	public int compare(Integer i1, Integer i2) {
+		// TODO Auto-generated method stub
+		return i1.compareTo(i2);
+	}
+	
+}
