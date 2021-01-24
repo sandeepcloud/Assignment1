@@ -1,0 +1,124 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+//Write java programs showing following functionalities using a LinkedList
+public class Col2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//to append the specified element to the end of a linked list.
+		LinkedList<String> li = new LinkedList<String>();
+		li.add("One");
+		li.add("Two");
+		System.out.println("Before appending "+li);
+		li.add("Three");
+		li.add("Four");
+		System.out.println("After appending "+li);
+		
+		// 1) to iterate through all elements in a linked list.
+		Iterator i = li.iterator();
+		while(i.hasNext()) {
+			System.out.println(i.next());
+		}
+		
+		// 2) to iterate through all elements in a linked list.
+		for(String s :li)
+		{
+			System.out.println(s);
+		}
+		
+		//to iterate through all elements in a linked list starting at the specified position.
+		Iterator i1 = li.listIterator(2);
+		System.out.println("Starting at 2nd index");
+		while(i1.hasNext())
+		{
+			System.out.println(i1.next());
+		}
+		
+		//to iterate a linked list in reverse order.
+		Iterator i2 = li.descendingIterator();
+		System.out.println("Desending order iterator");
+		while(i2.hasNext())
+		{
+			System.out.println(i2.next());
+		}
+		
+		//to insert the specified element at the specified position in the linked list.
+		System.out.println("Before add the element with specified index :"+li);
+		li.add(3,"Extra Two");
+		System.out.println(li);
+		
+		//to insert the specified element at the front of a linked list.
+		// 1) li.add(0,"new one");
+		li.addFirst("111");
+		System.out.println(li);
+		
+		//to insert the specified element at the end of a linked list.
+		li.offer("111");
+		System.out.println(li);
+		
+		//to display the elements and their positions in a linked list.
+		for(int k=0; k<li.size(); k++)
+		{
+			System.out.println("Element at the index "+k+": "+li.get(k));			
+		}
+		
+		//to remove first and last element from a linked list.
+		
+		//li.remove(0);
+		li.removeFirst();
+		System.out.println(li);
+		
+		li.removeLast();
+		System.out.println("remove last element "+li);
+		
+		/*  remove all the elements from a linked list.
+		li.removeAll(li);
+		System.out.println(" After remove all "+li);  */
+		
+		//to join two linked lists.
+		LinkedList l = new LinkedList<>();
+		l.add("111");
+		l.add("222");
+		l.add("333");
+		LinkedList l1 = new LinkedList<>();
+		l1.addAll(l);
+		l1.add(li);
+		System.out.println(l1);
+		
+		//to clone an linked list to another linked list.
+		LinkedList c = (LinkedList)l1.clone();
+		System.out.println(c);
+		
+		//to remove and return the first element of a linked list.
+		System.out.println("Original Linked List "+ li);
+		System.out.println("Remove Element: "+li.pop());
+		System.out.println("After pop the linked list is : "+li);
+		
+		//to retrieve but does not remove, the first element of a linked list.
+		System.out.println("retrive but not remove first element: "+li.peekFirst());
+		
+		//to check if a particular element exists in a linked list.
+		if(li.contains("Two"))
+		{
+			System.out.println("It is contain");
+		}
+			else
+			{
+				System.out.println("It is not contain");
+			}
+			
+	
+		//to convert a linked list to array list.
+		List<String> list = new ArrayList<String>(li);
+		{
+			System.out.println("Array List "+list);
+		}
+		
+	}
+	
+		
+}
+
