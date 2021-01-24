@@ -1,0 +1,94 @@
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Col3 {
+//Write java programs showing following functionalities using a HashSet
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//to add student names in a hash set.
+		HashSet<String> s = new HashSet<String>();
+		s.add("Abhi");
+		s.add("Bharath");
+		s.add("Chandru");
+		s.add("Vinay");
+		
+		System.out.println(s);
+		//to append the specified element to the end of a hash set.
+		s.add("Yogi");
+		System.out.println("After append "+s);
+		
+		//to iterate through all elements in a hash list.
+		Iterator i = s.iterator();
+		while(i.hasNext())
+		{
+			System.out.println(i.next());
+		}
+		//to get the number of elements in a hash set.
+		
+		System.out.println(" Nuber of elements in the list is "+s.size());
+		
+		//to convert a hash set to an array.
+		
+		
+		String[] str = new String[s.size()];
+		s.toArray(str);
+		for(String str1 : str)
+		{
+			System.out.println(str);
+		}
+		
+		
+		//to convert a hash set to a List/ArrayList.
+		
+		List<String> l = new ArrayList<String>(s);
+		System.out.println("Array List contains "+l);
+		
+		
+		//to compare two hash set.
+		HashSet<String> s1 = new HashSet<String>();
+		s1.add("Red");
+		s1.add("Green");
+		s1.add("Black");
+		s1.add("White");
+		
+		HashSet<String> s2 = new HashSet<String>();
+		s2.add("Red");
+		s2.add("Green");
+		s2.add("Black");
+		s2.add("Orange");
+		
+		HashSet<String> compare = new HashSet<String>();
+		for(String element : s1)
+		{
+			System.out.println(s2.contains(element) ? "Yes" : "No" );
+		}
+		
+		//to compare two sets and retain elements which are same on both sets.
+		HashSet<String> s3 = new HashSet<String>();
+		s3.add("Red");
+		s3.add("Green");
+		s3.add("Black");
+		s3.add("White");
+		System.out.println("First Hashset element "+s3);
+		
+		HashSet<String> s4 = new HashSet<String>();
+		s4.add("Red");
+		s4.add("Green");
+		s4.add("Black");
+		s4.add("Orange");
+		System.out.println("First Hashset element "+s4);
+
+		s3.retainAll(s4);
+		System.out.println("Hashset contain");
+		System.out.println(s3);
+		
+		//to empty an hash set.
+		//to remove all of the elements from a hash set.
+		s.removeAll(s);
+		System.out.println("After Removing "+s);
+	}
+
+}
